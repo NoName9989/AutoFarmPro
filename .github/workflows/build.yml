@@ -1,0 +1,29 @@
+name: Build AutoFarmPro
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Cai dat JDK 17
+        uses: actions/setup-java@v5
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Build bang Maven
+        run: mvn -B clean package
+
+      - name: Tai file .jar da build (vao muc Artifacts cua lan chay nay)
+        uses: actions/upload-artifact@v6
+        with:
+          name: AutoFarmPro-jar
+          path: target/AutoFarmPro.jar
