@@ -1,0 +1,20 @@
+name: AutoFarmPro
+version: '1.0.0'
+main: com.autofarm.AutoFarmPlugin
+api-version: '1.20'
+author: Claude
+description: Plugin tu dong trong cay, thu hoach va cau ca cho server Minecraft
+
+commands:
+  autofarm:
+    description: Lenh chinh cua plugin AutoFarmPro
+    aliases: [af, farm]
+    usage: /autofarm <farm|fish|stats|reload>
+
+permissions:
+  autofarm.use:
+    description: Cho phep su dung tinh nang tu dong lam vuon / cau ca
+    default: true
+  autofarm.admin:
+    description: Cho phep quan tri plugin (reload cau hinh)
+    default: op
