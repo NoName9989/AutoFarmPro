@@ -1,0 +1,71 @@
+# =====================================================
+#              AutoFarmPro - Cau hinh
+# =====================================================
+# Vi du: radius: 1 + range-y: 1 => quet vung 3x3 (x3 cao)
+# quanh nguoi choi - dung nhu vi du trong Buu Dia Nguc
+# (Nether Wart) ma ban dua ra.
+# =====================================================
+
+general:
+  # Danh sach the gioi duoc kich hoat (de trong [] = ap dung MOI the gioi)
+  enabled-worlds: []
+  # Tan suat quet (tick). 20 tick = 1 giay
+  scan-interval-ticks: 20
+  # So block toi da xu ly moi lan quet / moi nguoi choi (chong lag khi radius lon)
+  max-blocks-per-scan: 200
+
+farm:
+  # Cong tac tong - tat o day se tat toan bo tinh nang farm cho ca server
+  enabled: true
+  # Ban kinh NGANG quanh nguoi choi. radius: 1 => vung 3x3, radius: 2 => vung 5x5
+  radius: 1
+  # Pham vi CHIEU CAO quet (tren/duoi vi tri dung). range-y: 1 => quet Y-1 den Y+1
+  range-y: 1
+  # Tu dong thu hoach cay da chin va hoi sinh (age = 0) ngay lap tuc
+  auto-harvest: true
+  # Tu dong trong hat giong dang co trong tui do len dat trong / cat linh hon trong
+  auto-plant: true
+  # true = vat pham thu hoach vao thang tui do (du thi roi ra dat) | false = luon roi ra dat
+  auto-pickup: true
+  effects:
+    particles: true
+    sound: true
+  # Bat/tat rieng tung loai cay trong
+  # Luu y: Cocoa, Sugar Cane, Cactus, Bamboo, Melon, Pumpkin chi ho tro
+  # tu dong THU HOACH + HOI SINH, khong ho tro tu dong TRONG MOI tu dau
+  # (vi can dieu kien dat phuc tap hon: log go, canh nuoc, cat...)
+  crops:
+    WHEAT: true
+    CARROTS: true
+    POTATOES: true
+    BEETROOTS: true
+    NETHER_WART: true
+    COCOA: true
+    SUGAR_CANE: true
+    CACTUS: true
+    BAMBOO: true
+    MELON: true
+    PUMPKIN: true
+
+fishing:
+  enabled: true
+  # Tu dong tha can lai sau khi cau xong
+  auto-recast: true
+  # Do tre ngau nhien truoc khi "giat can" (tick) de giong nguoi choi that
+  reel-delay-min-ticks: 3
+  reel-delay-max-ticks: 10
+  # Do tre truoc khi tha can lai sau khi giat xong
+  recast-delay-ticks: 10
+  # Can cau se tu dong go khoi tay khi het do ben, giong co che vanilla
+  break-rod-when-broken: true
+
+# Cac dong duoi day la tin nhan hien thi TRONG GAME cho nguoi choi (ho tro & ma mau)
+messages:
+  prefix: "&a[AutoFarm] &r"
+  farm-enabled: "&aĐã bật tự động làm vườn!"
+  farm-disabled: "&cĐã tắt tự động làm vườn!"
+  fish-enabled: "&aĐã bật tự động câu cá!"
+  fish-disabled: "&cĐã tắt tự động câu cá!"
+  no-permission: "&cBạn không có quyền sử dụng lệnh này!"
+  reload-success: "&aĐã tải lại cấu hình thành công!"
+  rod-broken: "&cCần câu của bạn đã hết độ bền và bị gỡ ra!"
